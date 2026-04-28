@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alinhamento de Benefícios 2026 - Visão de Volume e Eficiência</title>
+    <title>Alinhamento de Benefícios 2026 - Visão Completa</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
@@ -19,8 +19,11 @@
         .priority-mid { @apply border-blue-500 bg-blue-50/50; }
         .priority-low { @apply border-slate-300 bg-slate-50/50; }
         
-        /* Custom Checkbox Style */
-        .cb-custom { @apply w-5 h-5 rounded border-slate-300 text-emerald-600 focus:ring-emerald-500 cursor-pointer; }
+        .cb-custom { @apply w-5 h-5 rounded border-slate-300 text-emerald-600 focus:ring-emerald-500 cursor-pointer transition-all; }
+        .cb-custom:checked { @apply bg-emerald-600 border-emerald-600; }
+        
+        .table-container { max-height: 800px; overflow-y: auto; }
+        thead th { position: sticky; top: 0; z-index: 10; @apply bg-slate-100; }
     </style>
 </head>
 <body class="p-4 md:p-8">
@@ -32,181 +35,227 @@
             <p class="text-slate-300">Foco: Tangibilização de Volume e Automações Latentes</p>
             <div class="flex flex-wrap gap-4 mt-6 text-sm">
                 <span class="bg-white/10 px-3 py-1 rounded-lg border border-white/20 italic">Ata: 28 de Abril, 2026</span>
-                <span class="bg-amber-500/20 text-amber-300 px-3 py-1 rounded-lg border border-amber-500/40 font-bold tracking-wide uppercase text-xs">Pauta: Revisão de Modelagem e Quick Wins</span>
+                <span class="bg-emerald-500/20 text-emerald-300 px-3 py-1 rounded-lg border border-emerald-500/40 font-bold tracking-wide uppercase text-xs tracking-widest">Ação Imediata</span>
             </div>
         </div>
         <div class="absolute right-[-50px] top-[-50px] w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl"></div>
     </header>
 
-    <!-- NEW: Volume Indicators (Tangibilização) -->
+    <!-- Volume Indicators (Tangibilização) -->
     <div class="mb-8">
         <h2 class="text-lg font-bold text-slate-800 uppercase tracking-wider mb-4 flex items-center gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-500"><path d="M2 20h20"/><path d="M7 10v10"/><path d="M12 5v15"/><path d="M17 14v6"/></svg>
-            Tamanho da Operação (Volume Mensal/Anual)
+            Impacto da Operação (Volumes Reais)
         </h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm border-t-4 border-t-emerald-500">
                 <p class="text-xs text-slate-500 uppercase font-bold mb-1">Pagamentos</p>
                 <p class="text-2xl font-bold text-slate-800">R$ 24M <span class="text-sm font-normal text-slate-400">/mês</span></p>
-                <p class="text-[11px] text-emerald-600 font-semibold">120 fiscais e não fiscais</p>
+                <p class="text-[11px] text-slate-500">120 fiscais e não fiscais</p>
             </div>
-            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm border-t-4 border-t-emerald-500">
                 <p class="text-xs text-slate-500 uppercase font-bold mb-1">Reembolsos</p>
-                <p class="text-2xl font-bold text-slate-800">2.000 <span class="text-sm font-normal text-slate-400">pedidos</span></p>
-                <p class="text-[11px] text-emerald-600 font-semibold">Volume de R$ 700K /mês</p>
+                <p class="text-2xl font-bold text-slate-800">2.000 <span class="text-sm font-normal text-slate-400">/mês</span></p>
+                <p class="text-[11px] text-slate-500">Fluxo de R$ 700K /mês</p>
             </div>
-            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
-                <p class="text-xs text-slate-500 uppercase font-bold mb-1">Folha de Pagamento</p>
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm border-t-4 border-t-blue-500">
+                <p class="text-xs text-slate-500 uppercase font-bold mb-1">Folha</p>
                 <p class="text-2xl font-bold text-slate-800">150 Mil <span class="text-sm font-normal text-slate-400">verbas</span></p>
-                <p class="text-[11px] text-blue-600 font-semibold">Processamento mensal crítico</p>
+                <p class="text-[11px] text-slate-500">Carga mensal de processamento</p>
             </div>
-            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm border-t-4 border-t-blue-500">
                 <p class="text-xs text-slate-500 uppercase font-bold mb-1">PDI & Eleições</p>
-                <p class="text-2xl font-bold text-slate-800">950 <span class="text-sm font-normal text-slate-400">movimentações</span></p>
-                <p class="text-[11px] text-blue-600 font-semibold">800 PDI + 150 Eleições/mês</p>
-            </div>
-            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
-                <p class="text-xs text-slate-500 uppercase font-bold mb-1">Atendimento N2</p>
-                <p class="text-2xl font-bold text-slate-800">200 <span class="text-sm font-normal text-slate-400">chamados</span></p>
-                <p class="text-[11px] text-amber-600 font-semibold">Alta complexidade técnica</p>
-            </div>
-            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
-                <p class="text-xs text-slate-500 uppercase font-bold mb-1">Contratos (Netlex)</p>
-                <p class="text-2xl font-bold text-slate-800">72 <span class="text-sm font-normal text-slate-400">/ano</span></p>
-                <p class="text-[11px] text-slate-500 font-semibold">12 principais + 60 subsidiários</p>
+                <p class="text-2xl font-bold text-slate-800">950 <span class="text-sm font-normal text-slate-400">movimentos</span></p>
+                <p class="text-[11px] text-slate-500">800 PDI + 150 Eleições /mês</p>
             </div>
         </div>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-1 gap-8 mb-8">
-        <!-- Diagnosis Section -->
-        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-            <div class="flex items-center gap-3 mb-6 text-slate-800">
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-500"><path d="M12 2v4"/><path d="m16.2 7.8 2.9-2.9"/><path d="M18 12h4"/><path d="m16.2 16.2 2.9 2.9"/><path d="M12 18v4"/><path d="m4.9 19.1 2.9-2.9"/><path d="M2 12h4"/><path d="m4.9 4.9 2.9 2.9"/></svg>
-                <h2 class="text-2xl font-bold uppercase tracking-tight">Diagnóstico Operacional</h2>
+    <!-- Diagnosis Section -->
+    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 mb-8">
+        <p class="text-slate-700 text-lg mb-6 leading-relaxed">
+            "A área de benefícios possui oportunidade de <strong>automações latentes</strong>, e a administração via corretora, apesar de não ter remuneração direta, não está mantendo a assertividade e vem nos gerando muito <strong>retrabalho</strong>."
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="flex items-center gap-3 text-sm text-slate-700 bg-emerald-50 p-4 rounded-xl border border-emerald-100">
+                <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                <strong>Necessidade de Quick Wins:</strong> Foco imediato em Pagamentos, Assinaturas e Saneamento.
             </div>
-            <p class="text-slate-700 text-lg mb-6 leading-relaxed">
-                "A área de benefícios possui oportunidade de <strong>automações latentes</strong>, e a administração via corretora, apesar de não ter remuneração direta, não está mantendo a assertividade e vem nos gerando muito <strong>retrabalho</strong>."
-            </p>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="flex items-center gap-3 text-sm text-slate-700 bg-emerald-50 p-4 rounded-xl border border-emerald-100">
-                    <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                    <strong>Necessidade de Quick Wins:</strong> Foco em entregas de impacto imediato.
-                </div>
-                <div class="flex items-center gap-3 text-sm text-slate-700 bg-amber-50 p-4 rounded-xl border border-amber-100">
-                    <div class="w-2 h-2 bg-amber-500 rounded-full"></div>
-                    <strong>Revisão de Modelo:</strong> Ajuste crítico no "o que" e "como".
-                </div>
+            <div class="flex items-center gap-3 text-sm text-slate-700 bg-amber-50 p-4 rounded-xl border border-amber-100">
+                <div class="w-2 h-2 bg-amber-500 rounded-full"></div>
+                <strong>Revisão de Modelo:</strong> Analisar criticamente o "O QUE" e o "COMO".
             </div>
         </div>
     </div>
 
-    <!-- Prioritized Matrix -->
+    <!-- Full Matrix -->
     <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden mb-8">
         <div class="p-6 border-b border-slate-100 bg-slate-50/50 flex justify-between items-center">
-            <div>
-                <h2 class="text-xl font-bold uppercase tracking-tight">Matriz de Priorização (Atualizada)</h2>
-                <p class="text-xs text-slate-500 mt-1">Classificado por Urgência Operacional e Assertividade</p>
-            </div>
-            <div class="text-[10px] text-slate-400 font-bold uppercase">Uso: Marque a caixa para confirmar o alinhamento</div>
+            <h2 class="text-xl font-bold uppercase tracking-tight">Matriz de Processos Íntegra</h2>
+            <div class="text-[10px] text-slate-400 font-bold uppercase">Checkboxes para discussão em tempo real</div>
         </div>
         
-        <div class="overflow-x-auto">
+        <div class="table-container">
             <table class="w-full text-left border-collapse table-auto">
-                <thead class="sticky top-0 z-20">
-                    <tr class="text-[10px] uppercase text-slate-500 font-bold bg-slate-100 shadow-sm">
+                <thead>
+                    <tr class="text-[10px] uppercase text-slate-500 font-bold shadow-sm">
                         <th class="px-6 py-3 border-b border-slate-200 w-12 text-center">Check</th>
                         <th class="px-6 py-3 border-b border-slate-200">Frente</th>
-                        <th class="px-6 py-3 border-b border-slate-200">Processo</th>
-                        <th class="px-6 py-3 border-b border-slate-200">Como</th>
+                        <th class="px-6 py-3 border-b border-slate-200">Microprocesso / Detalhe</th>
+                        <th class="px-6 py-3 border-b border-slate-200">Método</th>
                         <th class="px-6 py-3 border-b border-slate-200">Tempo</th>
-                        <th class="px-6 py-3 border-b border-slate-200 w-24 text-center">Complexidade</th>
+                        <th class="px-6 py-3 border-b border-slate-200 w-24 text-center">Dificuldade</th>
                     </tr>
                 </thead>
                 <tbody class="text-[13px] divide-y divide-slate-100">
                     
-                    <!-- PRIORIDADE ALTA: QUICK WINS (1 MÊS) -->
+                    <!-- PRIORIDADE 1: QUICK WINS -->
                     <tr class="priority-section priority-high">
                         <td colspan="6" class="px-6 py-2 bg-emerald-100/30 text-emerald-800 font-bold text-[11px] uppercase tracking-widest">
                             🚀 Prioridade 1: Quick Wins (Até 1 Mês)
                         </td>
                     </tr>
-                    <!-- NEW QUICK WIN: PAGAMENTOS -->
                     <tr class="hover:bg-slate-50">
                         <td class="px-6 py-3 text-center"><input type="checkbox" class="cb-custom"></td>
                         <td class="px-6 py-3 font-semibold text-slate-900">Financeiro</td>
-                        <td class="px-6 py-3 text-slate-700">Fluxo de Pagamentos (Fiscais/Não Fiscais)</td>
+                        <td class="px-6 py-3 text-slate-700">Pagamentos (120 fiscais/não fiscais | R$ 24M)</td>
                         <td class="px-6 py-3"><span class="method-tag">Automação ERP</span></td>
                         <td class="px-6 py-3 font-bold text-emerald-600">1 mês</td>
                         <td class="px-6 py-3"><span class="status-badge médio">Médio</span></td>
                     </tr>
+                    <!-- NOVO: FLUXO DE ASSINATURAS -->
+                    <tr class="hover:bg-slate-50 bg-emerald-50/20">
+                        <td class="px-6 py-3 text-center"><input type="checkbox" class="cb-custom"></td>
+                        <td class="px-6 py-3 font-semibold text-slate-900">Contratos</td>
+                        <td class="px-6 py-3 text-slate-700">Fluxo de Assinaturas (Contratos Benefícios)</td>
+                        <td class="px-6 py-3"><span class="method-tag">Digital / Netlex flow</span></td>
+                        <td class="px-6 py-3 font-bold text-emerald-600">1 mês</td>
+                        <td class="px-6 py-3"><span class="status-badge baixo">Baixo</span></td>
+                    </tr>
                     <tr class="hover:bg-slate-50">
                         <td class="px-6 py-3 text-center"><input type="checkbox" class="cb-custom"></td>
                         <td class="px-6 py-3 font-semibold text-slate-900">Folha</td>
-                        <td class="px-6 py-3 text-slate-700">Bate Cadastral (Relatórios)</td>
-                        <td class="px-6 py-3"><span class="method-tag">Agente x Sistema</span></td>
+                        <td class="px-6 py-3 text-slate-700">Bate cadastral (relatórios e saneamento)</td>
+                        <td class="px-6 py-3"><span class="method-tag">Agente x sistema</span></td>
                         <td class="px-6 py-3 font-bold text-emerald-600">1 mês</td>
                         <td class="px-6 py-3"><span class="status-badge médio">Médio</span></td>
                     </tr>
                     <tr class="hover:bg-slate-50">
                         <td class="px-6 py-3 text-center"><input type="checkbox" class="cb-custom"></td>
                         <td class="px-6 py-3 font-semibold text-slate-900">Folha</td>
-                        <td class="px-6 py-3 text-slate-700">Bate Cadastral (Cargas)</td>
-                        <td class="px-6 py-3"><span class="method-tag">Agente x Sistema</span></td>
+                        <td class="px-6 py-3 text-slate-700">Bate cadastral (cargas massivas)</td>
+                        <td class="px-6 py-3"><span class="method-tag">Agente x sistema</span></td>
                         <td class="px-6 py-3 font-bold text-emerald-600">1 mês</td>
                         <td class="px-6 py-3"><span class="status-badge médio">Médio</span></td>
                     </tr>
 
-                    <!-- PRIORIDADE MÉDIA (2-4 MESES) -->
+                    <!-- PRIORIDADE 2: MÉDIO PRAZO -->
                     <tr class="priority-section priority-mid">
                         <td colspan="6" class="px-6 py-2 bg-blue-100/30 text-blue-800 font-bold text-[11px] uppercase tracking-widest">
-                            ⚙️ Prioridade 2: Automações Estratégicas (2-4 Meses)
+                            ⚙️ Prioridade 2: Automações Latentes (2-4 Meses)
                         </td>
                     </tr>
                     <tr class="hover:bg-slate-50">
                         <td class="px-6 py-3 text-center"><input type="checkbox" class="cb-custom"></td>
                         <td class="px-6 py-3 font-semibold text-slate-900">Dados</td>
                         <td class="px-6 py-3 text-slate-700">Banco de dados de benefícios (Data Bricks)</td>
-                        <td class="px-6 py-3"><span class="method-tag">Agente x Sistema</span></td>
+                        <td class="px-6 py-3"><span class="method-tag">Agente x sistema</span></td>
                         <td class="px-6 py-3 text-slate-500">2 meses</td>
                         <td class="px-6 py-3"><span class="status-badge médio">Médio</span></td>
                     </tr>
                     <tr class="hover:bg-slate-50">
                         <td class="px-6 py-3 text-center"><input type="checkbox" class="cb-custom"></td>
                         <td class="px-6 py-3 font-semibold text-slate-900">Admissão</td>
-                        <td class="px-6 py-3 text-slate-700">Onboarding & Eleições Admissão</td>
-                        <td class="px-6 py-3"><span class="method-tag">AI / Agente x Sistema</span></td>
+                        <td class="px-6 py-3 text-slate-700">Onboarding Inteligente</td>
+                        <td class="px-6 py-3"><span class="method-tag">AI</span></td>
+                        <td class="px-6 py-3 text-slate-500">2 meses</td>
+                        <td class="px-6 py-3"><span class="status-badge baixo">Baixo</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50">
+                        <td class="px-6 py-3 text-center"><input type="checkbox" class="cb-custom"></td>
+                        <td class="px-6 py-3 font-semibold text-slate-900">Admissão</td>
+                        <td class="px-6 py-3 text-slate-700">Eleição de admissão - efetividade</td>
+                        <td class="px-6 py-3"><span class="method-tag">Agente x sistema</span></td>
+                        <td class="px-6 py-3 text-slate-500">2 meses</td>
+                        <td class="px-6 py-3"><span class="status-badge baixo">Baixo</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50">
+                        <td class="px-6 py-3 text-center"><input type="checkbox" class="cb-custom"></td>
+                        <td class="px-6 py-3 font-semibold text-slate-900">Demissões</td>
+                        <td class="px-6 py-3 text-slate-700">Atualizações base demitidos</td>
+                        <td class="px-6 py-3"><span class="method-tag">Agente x sistema</span></td>
+                        <td class="px-6 py-3 text-slate-500">2 meses</td>
+                        <td class="px-6 py-3"><span class="status-badge baixo">Baixo</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50">
+                        <td class="px-6 py-3 text-center"><input type="checkbox" class="cb-custom"></td>
+                        <td class="px-6 py-3 font-semibold text-slate-900">Atendimento</td>
+                        <td class="px-6 py-3 text-slate-700">Tickets de saúde e chamados em geral</td>
+                        <td class="px-6 py-3"><span class="method-tag">Processo Contínuo</span></td>
                         <td class="px-6 py-3 text-slate-500">2 meses</td>
                         <td class="px-6 py-3"><span class="status-badge baixo">Baixo</span></td>
                     </tr>
                     <tr class="hover:bg-slate-50">
                         <td class="px-6 py-3 text-center"><input type="checkbox" class="cb-custom"></td>
                         <td class="px-6 py-3 font-semibold text-slate-900">Folha</td>
-                        <td class="px-6 py-3 text-slate-700">Envio LANCA (Normal/Benfin/Reemb)</td>
-                        <td class="px-6 py-3"><span class="method-tag">Sistema x Integração</span></td>
+                        <td class="px-6 py-3 text-slate-700">Envio LANCA (Normal / Benfin / Reembolsos)</td>
+                        <td class="px-6 py-3"><span class="method-tag">Sistema x integração</span></td>
                         <td class="px-6 py-3 text-slate-500">3 meses</td>
                         <td class="px-6 py-3"><span class="status-badge médio">Médio</span></td>
                     </tr>
 
-                    <!-- PRIORIDADE BAIXA / LONGO PRAZO (6 MESES) -->
+                    <!-- PRIORIDADE 3: LONGO PRAZO -->
                     <tr class="priority-section priority-low">
                         <td colspan="6" class="px-6 py-2 bg-slate-200/30 text-slate-600 font-bold text-[11px] uppercase tracking-widest">
-                            📉 Prioridade 3: Governança e Corretora (6+ Meses)
+                            📉 Prioridade 3: Governança, Corretora e Contratos (6+ Meses)
                         </td>
                     </tr>
                     <tr class="hover:bg-slate-50">
                         <td class="px-6 py-3 text-center"><input type="checkbox" class="cb-custom"></td>
+                        <td class="px-6 py-3 font-semibold text-slate-900">Contratos</td>
+                        <td class="px-6 py-3 text-slate-700">Adm Contratos (12 + 60 subsidiários/ano)</td>
+                        <td class="px-6 py-3"><span class="method-tag">Fluxo Netlex</span></td>
+                        <td class="px-6 py-3 text-slate-500 font-bold">Anual</td>
+                        <td class="px-6 py-3"><span class="status-badge alto">Alto</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50">
+                        <td class="px-6 py-3 text-center"><input type="checkbox" class="cb-custom"></td>
+                        <td class="px-6 py-3 font-semibold text-slate-900">Admissão</td>
+                        <td class="px-6 py-3 text-slate-700">Liberação VA/VR na admissão</td>
+                        <td class="px-6 py-3"><span class="method-tag">Agente x sistema</span></td>
+                        <td class="px-6 py-3 text-slate-500">6 meses</td>
+                        <td class="px-6 py-3"><span class="status-badge baixo">Baixo</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50">
+                        <td class="px-6 py-3 text-center"><input type="checkbox" class="cb-custom"></td>
                         <td class="px-6 py-3 font-semibold text-slate-900">Fechamentos</td>
-                        <td class="px-6 py-3 text-slate-700">Custo Real / TAX VA/VR / Creche</td>
+                        <td class="px-6 py-3 text-slate-700">Faturamento / Custo Real / Creche</td>
                         <td class="px-6 py-3"><span class="method-tag">Processo x Agente</span></td>
+                        <td class="px-6 py-3 text-slate-500">6 meses</td>
+                        <td class="px-6 py-3"><span class="status-badge alto">Alto</span></td>
+                    </tr>
+                    <!-- MOVIMENTAÇÕES -->
+                    <tr class="hover:bg-slate-50">
+                        <td class="px-6 py-3 text-center"><input type="checkbox" class="cb-custom"></td>
+                        <td class="px-6 py-3 font-semibold text-slate-900">Movimentações</td>
+                        <td class="px-6 py-3 text-slate-700">Plano de Saúde / Odonto / Vida</td>
+                        <td class="px-6 py-3 italic text-slate-400">Modelo Corretora</td>
                         <td class="px-6 py-3 text-slate-500">6 meses</td>
                         <td class="px-6 py-3"><span class="status-badge alto">Alto</span></td>
                     </tr>
                     <tr class="hover:bg-slate-50">
                         <td class="px-6 py-3 text-center"><input type="checkbox" class="cb-custom"></td>
                         <td class="px-6 py-3 font-semibold text-slate-900">Movimentações</td>
-                        <td class="px-6 py-3 text-slate-700">Saúde / Wellhub / Farmácia / Travel Cash</td>
-                        <td class="px-6 py-3 italic text-slate-400">Modelo via Corretora</td>
+                        <td class="px-6 py-3 text-slate-700">Wellhub / Farmácia / Cultura / Optum</td>
+                        <td class="px-6 py-3 italic text-slate-400">Modelo Corretora</td>
+                        <td class="px-6 py-3 text-slate-500">6 meses</td>
+                        <td class="px-6 py-3"><span class="status-badge alto">Alto</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50">
+                        <td class="px-6 py-3 text-center"><input type="checkbox" class="cb-custom"></td>
+                        <td class="px-6 py-3 font-semibold text-slate-900">Movimentações</td>
+                        <td class="px-6 py-3 text-slate-700">Meu Pet / Ifamily / Mobilidade / Viagem</td>
+                        <td class="px-6 py-3 italic text-slate-400">Modelo Corretora</td>
                         <td class="px-6 py-3 text-slate-500">6 meses</td>
                         <td class="px-6 py-3"><span class="status-badge alto">Alto</span></td>
                     </tr>
@@ -215,52 +264,37 @@
         </div>
     </div>
 
-    <!-- Strategy Cards -->
+    <!-- Final Strategy Cards -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="bg-slate-800 text-white p-8 rounded-2xl shadow-lg">
-            <h3 class="text-emerald-400 font-bold mb-4 uppercase tracking-wider text-sm flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-                Plano de Ataque Imediato
-            </h3>
-            <ul class="space-y-4">
-                <li class="flex items-start gap-4">
-                    <span class="bg-emerald-500/20 text-emerald-400 w-6 h-6 flex items-center justify-center rounded-full text-xs font-bold border border-emerald-500/30">1</span>
-                    <div>
-                        <p class="font-bold text-slate-100">Automação de Pagamentos (Fiscais)</p>
-                        <p class="text-xs text-slate-400">Eliminar o processamento manual dos 120 pagamentos/mês (R$ 24M).</p>
-                    </div>
+        <div class="bg-slate-800 text-white p-8 rounded-2xl shadow-lg border border-emerald-500/30">
+            <h3 class="text-emerald-400 font-bold mb-4 uppercase tracking-wider text-sm">Próximos Passos Imediatos</h3>
+            <ul class="space-y-4 text-sm">
+                <li class="flex gap-4">
+                    <span class="text-emerald-500 font-bold">01</span>
+                    <p><strong>Automação de Pagamentos e Assinaturas:</strong> Resolver o gargalo imediato de faturamento e governança contratual.</p>
                 </li>
-                <li class="flex items-start gap-4">
-                    <span class="bg-emerald-500/20 text-emerald-400 w-6 h-6 flex items-center justify-center rounded-full text-xs font-bold border border-emerald-500/30">2</span>
-                    <div>
-                        <p class="font-bold text-slate-100">Bate Cadastral (1 Mês)</p>
-                        <p class="text-xs text-slate-400">Implementar via Agente para garantir assertividade na folha (150k verbas).</p>
-                    </div>
+                <li class="flex gap-4">
+                    <span class="text-emerald-500 font-bold">02</span>
+                    <p><strong>Saneamento via Bate Cadastral:</strong> Garantir que as 150k verbas de folha rodem com 100% de assertividade.</p>
                 </li>
             </ul>
         </div>
-
         <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-            <h3 class="text-slate-800 font-bold mb-4 uppercase tracking-wider text-sm flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-amber-500"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-                Foco em Assertividade
-            </h3>
-            <p class="text-sm text-slate-600 leading-relaxed italic mb-4">
-                A administração via corretora não está mantendo a assertividade necessária, gerando retrabalho crítico.
-            </p>
+            <h3 class="text-slate-800 font-bold mb-4 uppercase tracking-wider text-sm">Diretriz de Alinhamento</h3>
+            <p class="text-sm text-slate-600 italic mb-4">A administração via corretora exige revisão imediata para eliminar o retrabalho latente.</p>
             <div class="space-y-2">
-                <div class="flex items-center gap-2 text-xs font-semibold text-slate-500 uppercase">
-                    <input type="checkbox" class="cb-custom"> Revisar o "O QUE" fazemos
-                </div>
-                <div class="flex items-center gap-2 text-xs font-semibold text-slate-500 uppercase">
-                    <input type="checkbox" class="cb-custom"> Revisar o "COMO" fazemos
-                </div>
+                <label class="flex items-center gap-2 text-xs font-bold text-slate-500 uppercase cursor-pointer">
+                    <input type="checkbox" class="cb-custom"> Revisar o "O QUE"
+                </label>
+                <label class="flex items-center gap-2 text-xs font-bold text-slate-500 uppercase cursor-pointer">
+                    <input type="checkbox" class="cb-custom"> Revisar o "COMO"
+                </label>
             </div>
         </div>
     </div>
 
     <footer class="mt-12 text-center text-slate-400 text-[10px] uppercase tracking-widest font-semibold">
-        &copy; 2026 - Estratégia de Benefícios - Documento para Discussão Executiva
+        &copy; 2026 - Estratégia de Benefícios - Confidencial
     </footer>
 
 </body>
